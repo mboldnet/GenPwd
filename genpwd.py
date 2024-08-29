@@ -1,12 +1,13 @@
 """
    ---------------------------------------------------------------------------------------------
-   This program is a test with the Python cryptography package in which we generate 
+    This program is a test with the Python cryptography package in which we generate 
       derived key from a given string or byte array and return a Fernet class for 
       use with symmetric cryptography.
     ---------------------------------------------------------------------------------------------  
-    As a password generator, it is possible to pass the derived key, which has strong encryption.
+    As a password generator, the derived key can be used as it has strong cryptography.
     ---------------------------------------------------------------------------------------------
     Marcelo Negreiros - October/2023
+    Updated in 2024-08-28 -> I made the program more explanatory
     
 """
 
@@ -61,12 +62,14 @@ def main():
 
     _astring: str = ""
 
-    print(f"\nDerived Key Generated: {_key.decode('utf-8')}")
     print(
-        "You can encrypt and decrypt any data using this generated key.\nHere is an example:"
+        f"\nDerived Key Generated: \n{_key.decode('utf-8')}\n  This key can be used as a strong encryption password."
+    )
+    print(
+        ".. And you can encrypt and decrypt any data using this generated key.\nHere is an example:\n"
     )
 
-    _astring = input("Type a phrase: ")
+    _astring = input("Type a phrase/text to be encrypted: ")
 
     _stringEnc = f.encrypt(_astring.encode())
 
@@ -74,7 +77,7 @@ def main():
         f"\nEncrypting string '{_astring}'\n  with the key above: {_stringEnc.decode()}"
     )
     print(
-        f"\nDecrypting string '{_stringEnc.decode()}'\n to get the phrase: {f.decrypt(_stringEnc).decode()}"
+        f"\nDecrypting string '{_stringEnc.decode()}'\n To get back the typed phrase: {f.decrypt(_stringEnc).decode()}"
     )
 
 
