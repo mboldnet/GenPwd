@@ -21,7 +21,7 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 __syspwd__: bytes = (
-    b"3rM%3DSffQmpXcu9AJvmql09x6Wd5zYkpHs"  # Your Default Key. You can change it.
+    b"3rM%3DSffQmpXcu9AJvmql09x6Wd5zYkpHs"  # Your Default binay Key. You can change it.
 )
 
 
@@ -63,10 +63,10 @@ def main():
     _astring: str = ""
 
     print(
-        f"\nDerived Key Generated: \n{_key.decode('utf-8')}\n  This key can be used as a strong encryption password."
+        f"\nDerived Key Generated: {_key.decode('utf-8')}\n  This key can be used as a strong encryption password."
     )
     print(
-        ".. And you can encrypt and decrypt any data using this generated key.\nHere is an example:\n"
+        "  ... And you can encrypt and decrypt any data using this generated key.\nHere is an example:\n"
     )
 
     _astring = input("Type a phrase/text to be encrypted: ")
@@ -74,10 +74,10 @@ def main():
     _stringEnc = f.encrypt(_astring.encode())
 
     print(
-        f"\nEncrypting string '{_astring}'\n  with the key above: {_stringEnc.decode()}"
+        f"\nEncrypting string '{_astring}'\n  with the key Derived key above: {_stringEnc.decode()}"
     )
     print(
-        f"\nDecrypting string '{_stringEnc.decode()}'\n To get back the typed phrase: {f.decrypt(_stringEnc).decode()}"
+        f"\nDecrypting string '{_stringEnc.decode()}'\n To get back the typed phrase: {f.decrypt(_stringEnc).decode()}\n\nThat's all!"
     )
 
 
