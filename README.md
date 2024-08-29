@@ -1,2 +1,2 @@
 # GenPwd
-Another Password Generator tool
+For studying the Python cryptography package.
