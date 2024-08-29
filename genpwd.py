@@ -28,7 +28,7 @@ __syspwd__: bytes = (
 def getKey(yourkey: str = ""):
     """
     Creates a cryptographic seed from a string or byte array.
-    MN - 29/12/2023
+    MN - 29/10/2023
     Returns the key (bytes) for use with Fernet
     """
 
