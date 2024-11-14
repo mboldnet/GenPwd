@@ -1,2 +1,2 @@
 # GenPwd
-For studying the Python cryptography package.
+A command line app for studying the Python cryptography package.
